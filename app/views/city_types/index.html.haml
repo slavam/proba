@@ -1,0 +1,16 @@
+# coding: utf-8
+%h1 Типы населенных пунктов
+
+.content
+  %table.data
+    %tr
+      %th Код
+      %th Название типа
+      %th Обозначение
+    - for ct in @city_types
+      %tr
+        %td= ct.id
+        %td= ct.full_name.to_utf
+        %td= ct.short_name.to_utf
+  .actions
+    = link_to 'Добавить', :action => 'new'

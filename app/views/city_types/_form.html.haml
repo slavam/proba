@@ -1,0 +1,15 @@
+%h1
+  = submit
+  тип населенного пункта
+
+.content
+  - form_for @city_type do |form|
+    %table.card
+      %tr
+        %th= form.label "Название типа"
+        %td= form.text_field :full_name
+      %tr
+        %th= form.label "Обозначение"
+        %td= form.text_field :short_name
+    %br
+    = submit_tag submit
