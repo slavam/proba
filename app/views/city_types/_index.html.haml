@@ -1,0 +1,23 @@
+<a href='#'>Link</a>
+<script>
+$('a').bind('click', function() {
+alert('Unobtrusive!');
+}
+</script>
+<a href='#' onclick='alert("Inline Javscript")'>Link</a>
+%h1 Типы населенных пунктов
+
+.content
+  %table.data
+    %tr
+      %th Код
+      %th Название типа
+      %th Обозначение
+    - @city_types.each do |ct|
+      %tr
+        %td= ct.id
+        %td= ct.full_name
+        %td= ct.short_name
+  .actions
+    = link_to 'Добавить', :action => 'new'
+    %br
